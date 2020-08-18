@@ -19,6 +19,23 @@ modules:
     path: web
     requires:
       - name: RSG_MTA_APP_00-uaa
+      - name: xsjs_api
+        group: destinations
+        properties:
+          name: xsjs_api
+          url: '~{url}'
+          forwardAuthToken: true
+  - name: xsjs
+    type: nodejs
+    path: xsjs
+    provides:
+      - name: xsjs_api
+        properties:
+          url: '${default-url}'
+    requires:
+      - name: hdi_db
+      - name: RSG_MTA_APP_00-uaa
+      - name: db
 resources:
   - name: hdi_db
     properties:
