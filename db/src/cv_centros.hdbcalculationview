@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="RSG_MTA_APP.db::cv_centros" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="cv_centros"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="RSG_MTA_APP.db::T001W">
+    <resourceUri>RSG_MTA_APP.db::T001W</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews/>
+<logicalModel id="RSG_MTA_APP.db::T001W">
+  <attributes>
+    <attribute id="WERKS" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WERKS"/>
+      <keyMapping columnObjectName="T001W" columnName="WERKS"/>
+    </attribute>
+    <attribute id="NAME1" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NAME1"/>
+      <keyMapping columnObjectName="T001W" columnName="NAME1"/>
+    </attribute>
+    <attribute id="BWKEY" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="BWKEY"/>
+      <keyMapping columnObjectName="T001W" columnName="BWKEY"/>
+    </attribute>
+    <attribute id="KUNNR" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="KUNNR"/>
+      <keyMapping columnObjectName="T001W" columnName="KUNNR"/>
+    </attribute>
+    <attribute id="LIFNR" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LIFNR"/>
+      <keyMapping columnObjectName="T001W" columnName="LIFNR"/>
+    </attribute>
+    <attribute id="EKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="EKORG"/>
+      <keyMapping columnObjectName="T001W" columnName="EKORG"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

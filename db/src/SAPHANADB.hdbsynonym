@@ -1,0 +1,8 @@
+{
+  "RSG_MTA_APP.db::T001W": {
+    "target": {
+      "object": "T001W",
+      "schema": "SAPHANADB"
+    }
+  }
+}
