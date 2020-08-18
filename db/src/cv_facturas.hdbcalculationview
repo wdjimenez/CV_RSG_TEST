@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="RSG_MTA_APP.db::cv_facturas" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="cv_centros"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="RSG_MTA_APP.db::VBRK">
+    <resourceUri>RSG_MTA_APP.db::VBRK</resourceUri>
+  </DataSource>
+  <DataSource id="RSG_MTA_APP.db::VBRP">
+    <resourceUri>RSG_MTA_APP.db::VBRP</resourceUri>
+  </DataSource>
+</dataSources>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_N" joinType="inner">
+    <viewAttributes>
+      <viewAttribute id="MANDT"/>
+      <viewAttribute id="VBELN"/>
+      <viewAttribute id="FKART"/>
+      <viewAttribute id="FKTYP"/>
+      <viewAttribute id="VKORG"/>
+      <viewAttribute id="VTWEG"/>
+      <viewAttribute id="POSNR"/>
+      <viewAttribute id="FKIMG"/>
+      <viewAttribute id="VRKME"/>
+      <viewAttribute id="MATNR"/>
+      <viewAttribute id="ARKTX"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <restrictedViewAttributes/>
+    <input node="RSG_MTA_APP.db::VBRK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/></input>
+    <input node="RSG_MTA_APP.db::VBRP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+    </input>
+    <joinAttribute name="MANDT"/>
+    <joinAttribute name="VBELN"/>
+  </calculationView>
+</calculationViews>
+<logicalModel id="Join_1">
+  <attributes>
+    <attribute id="MANDT" order="1" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MANDT"/>
+      <keyMapping columnObjectName="Join_1" columnName="MANDT"/>
+    </attribute>
+    <attribute id="VBELN" order="2" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VBELN"/>
+      <keyMapping columnObjectName="Join_1" columnName="VBELN"/>
+    </attribute>
+    <attribute id="POSNR" order="3" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="POSNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="POSNR"/>
+    </attribute>
+    <attribute id="FKART" order="4" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKART"/>
+      <keyMapping columnObjectName="Join_1" columnName="FKART"/>
+    </attribute>
+    <attribute id="FKTYP" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKTYP"/>
+      <keyMapping columnObjectName="Join_1" columnName="FKTYP"/>
+    </attribute>
+    <attribute id="VKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VKORG"/>
+      <keyMapping columnObjectName="Join_1" columnName="VKORG"/>
+    </attribute>
+    <attribute id="VTWEG" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VTWEG"/>
+      <keyMapping columnObjectName="Join_1" columnName="VTWEG"/>
+    </attribute>
+    <attribute id="FKIMG" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKIMG"/>
+      <keyMapping columnObjectName="Join_1" columnName="FKIMG"/>
+    </attribute>
+    <attribute id="VRKME" order="9" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VRKME"/>
+      <keyMapping columnObjectName="Join_1" columnName="VRKME"/>
+    </attribute>
+    <attribute id="MATNR" order="10" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MATNR"/>
+      <keyMapping columnObjectName="Join_1" columnName="MATNR"/>
+    </attribute>
+    <attribute id="ARKTX" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ARKTX"/>
+      <keyMapping columnObjectName="Join_1" columnName="ARKTX"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures/>
+  <calculatedMeasures/>
+  <restrictedMeasures/></logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="198"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+    <shape modelObjectName="RSG_MTA_APP.db::VBRK" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="27" y="27"/>
+      <rectangleSize width="283"/>
+    </shape>
+    <shape modelObjectName="RSG_MTA_APP.db::VBRP" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="320" y="30"/>
+      <rectangleSize width="210"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>

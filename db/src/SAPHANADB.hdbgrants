@@ -1,18 +1,46 @@
 {
   "SAPHANADB": {
     "object_owner": {
-      "object_privileges" : [
-	        	{
-	          "name": "T001W",
-	          "privileges": [ "INSERT", "UPDATE", "SELECT" ],
-	          "privileges_with_grant_option" : [ "SELECT" ]
-	        	}
-	    	]
+	      "object_privileges" : [
+		        	{
+		          "name": "T001W",
+		          "privileges": [ "INSERT", "UPDATE", "SELECT" ],
+		          "privileges_with_grant_option" : [ "SELECT" ]
+		        	}
+		    	],
+		    "object_privileges" : [
+		        	{
+		          "name": "VBRK",
+		          "privileges": [ "INSERT", "UPDATE", "SELECT" ],
+		          "privileges_with_grant_option" : [ "SELECT" ]
+		        	}
+		    	],
+			"object_privileges" : [
+		        	{
+		          "name": "VBRP",
+		          "privileges": [ "INSERT", "UPDATE", "SELECT" ],
+		          "privileges_with_grant_option" : [ "SELECT" ]
+		        	}
+		    	]
 	    },
     "application_user": {
       "object_privileges" : [
 		        {
 		          "name": "T001W",
+		          "privileges": [ "INSERT", "UPDATE", "SELECT" ],
+		          "privileges_with_grant_option" : [ "SELECT" ]
+		        }
+		    ],
+		"object_privileges" : [
+		        {
+		          "name": "VBRK",
+		          "privileges": [ "INSERT", "UPDATE", "SELECT" ],
+		          "privileges_with_grant_option" : [ "SELECT" ]
+		        }
+		    ],
+		  "object_privileges" : [
+		        {
+		          "name": "VBRP",
 		          "privileges": [ "INSERT", "UPDATE", "SELECT" ],
 		          "privileges_with_grant_option" : [ "SELECT" ]
 		        }

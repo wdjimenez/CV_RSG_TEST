@@ -1,4 +1,0 @@
-service{
-    "RSG_MTA_APP.db::cv_centros" as "Centros"
-    keys("WERKS");
-}

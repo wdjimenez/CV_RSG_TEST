@@ -4,5 +4,17 @@
       "object": "T001W",
       "schema": "SAPHANADB"
     }
+  },
+  "RSG_MTA_APP.db::VBRK": {
+    "target": {
+      "object": "VBRK",
+      "schema": "SAPHANADB"
+    }
+  },
+  "RSG_MTA_APP.db::VBRP": {
+    "target": {
+      "object": "VBRP",
+      "schema": "SAPHANADB"
+    }
   }
 }
