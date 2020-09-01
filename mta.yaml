@@ -1,4 +1,4 @@
-ID: RSG_MTA_APP
+ID: CV_RSG_TEST
 _schema-version: '2.1'
 version: 0.0.1
 modules:
@@ -18,7 +18,7 @@ modules:
     type: html5
     path: web
     requires:
-      - name: RSG_MTA_APP_00-uaa
+      - name: CV_RSG_TEST_00-uaa
       - name: xsjs_api
         group: destinations
         properties:
@@ -34,7 +34,7 @@ modules:
           url: '${default-url}'
     requires:
       - name: hdi_db
-      - name: RSG_MTA_APP_00-uaa
+      - name: CV_RSG_TEST_00-uaa
       - name: db
 resources:
   - name: hdi_db
@@ -47,7 +47,7 @@ resources:
     properties:
       the-service-name: '${service-name}'
     type: org.cloudfoundry.existing-service
-  - name: RSG_MTA_APP_00-uaa
+  - name: CV_RSG_TEST_00-uaa
     type: com.sap.xs.uaa-space
     parameters:
       path: ./xs-security.json

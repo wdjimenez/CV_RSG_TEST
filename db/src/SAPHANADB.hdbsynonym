@@ -1,17 +1,17 @@
 {
-  "RSG_MTA_APP.db::T001W": {
+  "CV_RSG_TEST.db::T001W": {
     "target": {
       "object": "T001W",
       "schema": "SAPHANADB"
     }
   },
-  "RSG_MTA_APP.db::VBRK": {
+  "CV_RSG_TEST.db::VBRK": {
     "target": {
       "object": "VBRK",
       "schema": "SAPHANADB"
     }
   },
-  "RSG_MTA_APP.db::VBRP": {
+  "CV_RSG_TEST.db::VBRP": {
     "target": {
       "object": "VBRP",
       "schema": "SAPHANADB"

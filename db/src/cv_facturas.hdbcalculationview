@@ -1,37 +1,57 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="RSG_MTA_APP.db::cv_facturas" applyPrivilegeType="NONE" dataCategory="DIMENSION" schemaVersion="3.0" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
-<descriptions defaultDescription="cv_centros"/>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="CV_RSG_TEST.db::cv_facturas" applyPrivilegeType="NONE" dataCategory="DIMENSION" dimensionType="STANDARD" schemaVersion="3.0" outputViewType="Projection" cacheInvalidationPeriod="NONE" enforceSqlExecution="false">
+<descriptions defaultDescription="cv_facturas"/>
 <localVariables/>
 <variableMappings/>
 <dataSources>
-  <DataSource id="RSG_MTA_APP.db::VBRK">
-    <resourceUri>RSG_MTA_APP.db::VBRK</resourceUri>
+  <DataSource id="CV_RSG_TEST.db::VBRK">
+    <resourceUri>CV_RSG_TEST.db::VBRK</resourceUri>
   </DataSource>
-  <DataSource id="RSG_MTA_APP.db::VBRP">
-    <resourceUri>RSG_MTA_APP.db::VBRP</resourceUri>
+  <DataSource id="CV_RSG_TEST.db::VBRP">
+    <resourceUri>CV_RSG_TEST.db::VBRP</resourceUri>
   </DataSource>
 </dataSources>
 <calculationViews>
   <calculationView xsi:type="Calculation:JoinView" id="Join_1" cardinality="C1_N" joinType="inner">
     <viewAttributes>
-      <viewAttribute id="MANDT"/>
       <viewAttribute id="VBELN"/>
       <viewAttribute id="FKART"/>
       <viewAttribute id="FKTYP"/>
+      <viewAttribute id="VBTYP"/>
+      <viewAttribute id="WAERK"/>
       <viewAttribute id="VKORG"/>
       <viewAttribute id="VTWEG"/>
       <viewAttribute id="POSNR"/>
-      <viewAttribute id="FKIMG"/>
+      <viewAttribute id="POSNR_1"/>
       <viewAttribute id="VRKME"/>
+      <viewAttribute id="MEINS"/>
+      <viewAttribute id="FKLMG"/>
+      <viewAttribute id="LMENG"/>
       <viewAttribute id="MATNR"/>
       <viewAttribute id="ARKTX"/>
+      <viewAttribute id="MANDT"/>
     </viewAttributes>
     <calculatedViewAttributes/>
     <restrictedViewAttributes/>
-    <input node="RSG_MTA_APP.db::VBRK">
+    <input node="CV_RSG_TEST.db::VBRK">
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKART" source="FKART"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKTYP" source="FKTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VBTYP" source="VBTYP"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="WAERK" source="WAERK"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VKORG" source="VKORG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VTWEG" source="VTWEG"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
-      <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/></input>
-    <input node="RSG_MTA_APP.db::VBRP">
+    </input>
+    <input node="CV_RSG_TEST.db::VBRP">
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="POSNR_1" source="POSNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="VRKME" source="VRKME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MEINS" source="MEINS"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="FKLMG" source="FKLMG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LMENG" source="LMENG"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="MATNR" source="MATNR"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ARKTX" source="ARKTX"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="MANDT" source="MANDT"/>
       <mapping xsi:type="Calculation:AttributeMapping" target="VBELN" source="VBELN"/>
     </input>
@@ -61,27 +81,43 @@
       <descriptions defaultDescription="FKTYP"/>
       <keyMapping columnObjectName="Join_1" columnName="FKTYP"/>
     </attribute>
-    <attribute id="VKORG" order="6" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VBTYP" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="VBTYP"/>
+      <keyMapping columnObjectName="Join_1" columnName="VBTYP"/>
+    </attribute>
+    <attribute id="WAERK" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="WAERK"/>
+      <keyMapping columnObjectName="Join_1" columnName="WAERK"/>
+    </attribute>
+    <attribute id="VKORG" order="8" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VKORG"/>
       <keyMapping columnObjectName="Join_1" columnName="VKORG"/>
     </attribute>
-    <attribute id="VTWEG" order="7" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VTWEG" order="9" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VTWEG"/>
       <keyMapping columnObjectName="Join_1" columnName="VTWEG"/>
     </attribute>
-    <attribute id="FKIMG" order="8" displayAttribute="false" attributeHierarchyActive="false">
-      <descriptions defaultDescription="FKIMG"/>
-      <keyMapping columnObjectName="Join_1" columnName="FKIMG"/>
-    </attribute>
-    <attribute id="VRKME" order="9" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="VRKME" order="10" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="VRKME"/>
       <keyMapping columnObjectName="Join_1" columnName="VRKME"/>
     </attribute>
-    <attribute id="MATNR" order="10" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="MEINS" order="11" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="MEINS"/>
+      <keyMapping columnObjectName="Join_1" columnName="MEINS"/>
+    </attribute>
+    <attribute id="FKLMG" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="FKLMG"/>
+      <keyMapping columnObjectName="Join_1" columnName="FKLMG"/>
+    </attribute>
+    <attribute id="LMENG" order="13" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LMENG"/>
+      <keyMapping columnObjectName="Join_1" columnName="LMENG"/>
+    </attribute>
+    <attribute id="MATNR" order="14" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="MATNR"/>
       <keyMapping columnObjectName="Join_1" columnName="MATNR"/>
     </attribute>
-    <attribute id="ARKTX" order="11" displayAttribute="false" attributeHierarchyActive="false">
+    <attribute id="ARKTX" order="15" displayAttribute="false" attributeHierarchyActive="false">
       <descriptions defaultDescription="ARKTX"/>
       <keyMapping columnObjectName="Join_1" columnName="ARKTX"/>
     </attribute>
@@ -89,7 +125,8 @@
   <calculatedAttributes/>
   <baseMeasures/>
   <calculatedMeasures/>
-  <restrictedMeasures/></logicalModel>
+  <restrictedMeasures/>
+</logicalModel>
 <layout>
   <shapes>
     <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
@@ -97,16 +134,16 @@
     </shape>
   
     <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
-      <upperLeftCorner x="100" y="198"/>
+      <upperLeftCorner x="100" y="209"/>
       <rectangleSize height="30" width="160"/>
     </shape>
-    <shape modelObjectName="RSG_MTA_APP.db::VBRK" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
-      <upperLeftCorner x="27" y="27"/>
-      <rectangleSize width="283"/>
+    <shape modelObjectName="CV_RSG_TEST.db::VBRK" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+      <upperLeftCorner x="20" y="30"/>
+      <rectangleSize width="209.34765625"/>
     </shape>
-    <shape modelObjectName="RSG_MTA_APP.db::VBRP" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
+    <shape modelObjectName="CV_RSG_TEST.db::VBRP" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput">
       <upperLeftCorner x="320" y="30"/>
-      <rectangleSize width="210"/>
+      <rectangleSize width="208.685546875"/>
     </shape>
   </shapes>
 </layout>

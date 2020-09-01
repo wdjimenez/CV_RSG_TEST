@@ -1,4 +1,4 @@
 service{
-    "RSG_MTA_APP.db::cv_facturas" as "Facturas"
+    "CV_RSG_TEST.db::cv_facturas" as "Facturas"
     keys("MANDT", "VBELN", "POSNR");
 }
